@@ -38,10 +38,15 @@ dependencies:
   equatable: ^1.2.2
   # Dependency Injection
   get_it: ^4.0.4
+  injectable: ^1.0.2
   # Navigation
   auto_route: ^0.6.6
   # Platform Specific UI
   flutter_platform_widgets: ^0.51.0
+  
+  
+  
+  
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,6 +56,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^1.10.0
+  injectable_generator: ^1.0.2
+  auto_route_generator: ^0.6.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
