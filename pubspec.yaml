@@ -1,5 +1,5 @@
 name: news
-description: A new Flutter project.
+description: A simple news application built with flutter.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,6 +23,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Network Call
+  http: ^0.12.2
+  data_connection_checker: ^0.3.4
+  # Local Cache
+  shared_preferences: ^0.5.8
+  # State Management
+  stacked: ^1.7.4
+  # App Services
+  stacked_services: ^0.4.8
+  # Functional Programming Thingies
+  dartz: ^0.9.1
+  # Value Equality
+  equatable: ^1.2.2
+  # Dependency Injection
+  get_it: ^4.0.4
+  # Navigation
+  auto_route: ^0.6.6
+  # Platform Specific UI
+  flutter_platform_widgets: ^0.51.0
 
 
   # The following adds the Cupertino Icons font to your application.
