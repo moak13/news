@@ -6,7 +6,7 @@ import '../../../../core/error/exceptions.dart';
 import '../../../../core/persistence/database.dart';
 import '../model/news_data_model.dart';
 
-const String key = '';
+const String key = 'news';
 
 abstract class NewsLocalDataSource {
   /// Gets the cached [NewsModel] which was gotten the last time
