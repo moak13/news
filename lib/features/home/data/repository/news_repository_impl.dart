@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../core/error/exceptions.dart';
@@ -9,6 +10,7 @@ import '../../domain/repository/news_data_repository.dart';
 import '../datasource/news_local_data_source.dart';
 import '../datasource/news_remote_data_source.dart';
 
+@Injectable(as: NewsRepository)
 class NewsRepositoryImpl implements NewsRepository {
   final NewsRemoteDataSource remoteDataSource;
   final NewsLocalDataSource localDataSource;

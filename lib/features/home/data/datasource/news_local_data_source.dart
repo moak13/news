@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../core/error/exceptions.dart';
@@ -22,6 +23,7 @@ abstract class NewsLocalDataSource {
   Future<void> cacheData(NewsModel cacheData);
 }
 
+@Injectable(as: NewsLocalDataSource)
 class NewsLocalDataSourceImpl implements NewsLocalDataSource {
   final Database database;
 
