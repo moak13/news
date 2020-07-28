@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/presentation/viewmodel/home_viewmodel.dart';
-import 'package:news/features/home/presentation/widget/news_card.dart';
 import 'package:stacked/stacked.dart';
+
+import '../viewmodel/home_viewmodel.dart';
+import '../widget/news_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
