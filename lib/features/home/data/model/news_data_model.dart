@@ -1,5 +1,6 @@
-import 'package:news/features/home/domain/entities/news_data.dart';
 import 'package:meta/meta.dart';
+
+import '../../domain/entities/news_data.dart';
 
 class NewsModel extends News {
   NewsModel({
