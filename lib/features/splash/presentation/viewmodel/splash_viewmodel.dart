@@ -1,8 +1,9 @@
 import 'dart:async';
 
-import 'package:news/core/utils/locator.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+
+import '../../../../core/utils/locator.dart';
 
 class SplashViewModel extends BaseViewModel {
   NavigationService _navigationService = locator<NavigationService>();
