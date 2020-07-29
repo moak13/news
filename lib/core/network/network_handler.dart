@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
 abstract class AppHttpClient {
-  Future<http.Response> getNews(String url, {Map<String, String> headers});
+  Future<http.Response> getNews(String url);
 }
 
 class AppHttpClientImpl implements AppHttpClient {
@@ -11,9 +11,8 @@ class AppHttpClientImpl implements AppHttpClient {
   AppHttpClientImpl({@required this.client});
 
   @override
-  Future<http.Response> getNews(String url,
-      {Map<String, String> headers}) async {
-    final response = await client.get(url, headers: headers);
+  Future<http.Response> getNews(String url) async {
+    final response = await client.get(url);
     return response;
   }
 }
