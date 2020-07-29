@@ -10,6 +10,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<SplashViewModel>.reactive(
+      onModelReady: (model) => model.startupHandler(),
       builder: (context, model, child) {
         return Scaffold(
           body: Container(
@@ -17,6 +18,7 @@ class SplashView extends StatelessWidget {
             width: ScreenUtil(context).setWidth(),
             child: Center(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     'FLUTTER',
