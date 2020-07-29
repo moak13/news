@@ -10,7 +10,7 @@ class SplashViewModel extends BaseViewModel {
 
   // This holds the screen to move to
   _makeMove() {
-    _navigationService.navigateTo('/home-view');
+    _navigationService.replaceWith('/home-view');
   }
 
   // This will handle the movement to a new page when app runs
