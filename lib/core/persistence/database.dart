@@ -1,4 +1,3 @@
-import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:meta/meta.dart';
 
@@ -8,7 +7,6 @@ abstract class Database {
   Future<String> pull({@required String key});
 }
 
-@Injectable(as: Database)
 class DatabaseImpl implements Database {
   final SharedPreferences sharedPreferences;
   DatabaseImpl({@required this.sharedPreferences});

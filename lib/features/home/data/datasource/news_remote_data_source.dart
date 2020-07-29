@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../core/error/exceptions.dart';
@@ -14,7 +12,6 @@ abstract class NewsRemoteDataSource {
   Future<NewsModel> getNews();
 }
 
-@Injectable(as: NewsRemoteDataSource)
 class NewsRemoteDataSourceImpl implements NewsRemoteDataSource {
   final AppHttpClient client;
   NewsRemoteDataSourceImpl({

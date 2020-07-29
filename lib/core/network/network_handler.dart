@@ -1,12 +1,10 @@
 import 'package:http/http.dart' as http;
-import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 abstract class AppHttpClient {
   Future<http.Response> getNews(String url, {Map<String, String> headers});
 }
 
-@Injectable(as: AppHttpClient)
 class AppHttpClientImpl implements AppHttpClient {
   final http.Client client;
 

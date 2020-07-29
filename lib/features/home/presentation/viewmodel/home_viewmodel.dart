@@ -1,12 +1,10 @@
 //import 'package:news/core/utils/locator.dart';
 import 'package:stacked/stacked.dart';
 import 'package:meta/meta.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../domain/entities/news_data.dart';
 import '../../domain/usecase/get_news.dart';
 
-@injectable
 class HomeViewModel extends BaseViewModel {
   final GetNews getNews;
   HomeViewModel({
