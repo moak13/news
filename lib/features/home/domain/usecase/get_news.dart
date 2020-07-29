@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
@@ -19,4 +20,7 @@ class GetNews implements UseCase<News, NoParams> {
   }
 }
 
-class NoParams {}
+class NoParams extends Equatable {
+  @override
+  List<Object> get props => [];
+}
