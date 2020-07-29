@@ -14,14 +14,20 @@ class NewsModel extends News {
         );
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
+    print('NEWS conversion reached');
+    print(json['articles']);
+    List<Articles> _articles = new List<Articles>();
+    json['articles'].forEach((v) {
+      print('logic check');
+      print(v);
+
+      _articles.add(new ArticlesModel.fromJson(v));
+      return _articles;
+    });
     return NewsModel(
         status: json['status'],
         totalResults: json['totalResults'],
-        articles: json['articles'] != null
-            ? json['articles'].forEach((v) {
-                new ArticlesModel.fromJson(v);
-              })
-            : null);
+        articles: _articles);
   }
 
   Map<String, dynamic> toJson() {
@@ -53,6 +59,8 @@ class ArticlesModel extends Articles {
         );
 
   factory ArticlesModel.fromJson(Map<String, dynamic> json) {
+    print('Article cited');
+    print(json['author']);
     return ArticlesModel(
       source: json['source'] != null
           ? new SourceModel.fromJson(json['source'])

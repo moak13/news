@@ -22,6 +22,7 @@ class NewsRemoteDataSourceImpl implements NewsRemoteDataSource {
     final String url =
         "https://newsapi.org/v2/top-headlines?country=ng&apiKey=18fe231690634a4687477ed1fc39e613";
     final response = await client.getNews(url);
+    print('requesting..');
     if (response.statusCode == 200) {
       return NewsModel.fromJson(json.decode(response.body));
     } else {
