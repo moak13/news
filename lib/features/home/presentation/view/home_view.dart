@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../../core/utils/locator.dart';
 import '../../../../core/widget/indicator.dart';
+import '../../domain/usecase/get_news.dart';
 import '../viewmodel/home_viewmodel.dart';
 import '../widget/news_card.dart';
 
@@ -47,7 +49,9 @@ class _HomeViewState extends State<HomeView> {
                     ),
         );
       },
-      viewModelBuilder: () => HomeViewModel(),
+      viewModelBuilder: () => HomeViewModel(
+        getNews: locator<GetNews>(),
+      ),
     );
   }
 }
