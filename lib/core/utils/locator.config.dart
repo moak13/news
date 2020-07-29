@@ -9,6 +9,7 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:injectable/get_it_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import '../../features/home/data/datasource/news_local_data_source.dart';
 import '../../features/home/data/datasource/news_remote_data_source.dart';
@@ -20,15 +21,18 @@ import '../network/network_handler.dart';
 import '../network/network_info.dart';
 import '../persistence/database.dart';
 import '../usecase/usecase.dart';
+import 'third_party_module.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
 
 void $initGetIt(GetIt g, {String environment}) {
   final gh = GetItHelper(g, environment);
+  final thirdParty = _$ThirdParty();
   gh.factory<AppHttpClient>(() => AppHttpClientImpl(client: g<Client>()));
   gh.factory<Database>(
       () => DatabaseImpl(sharedPreferences: g<SharedPreferences>()));
+  gh.lazySingleton<NavigationService>(() => thirdParty.navigationService);
   gh.factory<NetworkInfo>(
       () => NetworkInfoImpl(connectionChecker: g<DataConnectionChecker>()));
   gh.factory<NewsLocalDataSource>(
@@ -42,4 +46,9 @@ void $initGetIt(GetIt g, {String environment}) {
       ));
   gh.factory<UseCase<News, NoParams>>(
       () => GetNews(repository: g<NewsRepository>()));
+}
+
+class _$ThirdParty extends ThirdParty {
+  @override
+  NavigationService get navigationService => NavigationService();
 }
