@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import '../../../../core/utils/locator.dart';
+import '../../../../locator.dart';
 
 class SplashViewModel extends BaseViewModel {
   NavigationService _navigationService = locator<NavigationService>();
@@ -15,7 +15,7 @@ class SplashViewModel extends BaseViewModel {
 
   // This will handle the movement to a new page when app runs
   startupHandler() {
-    Duration _duration = Duration(seconds: 2);
+    Duration _duration = Duration(seconds: 5);
     return Timer(_duration, _makeMove);
   }
 }

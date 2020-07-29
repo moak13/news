@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import 'core/utils/locator.dart';
+import 'locator.dart';
 import 'core/utils/router.gr.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
   runApp(MyApp());
 }

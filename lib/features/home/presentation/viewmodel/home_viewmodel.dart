@@ -1,15 +1,11 @@
-//import 'package:news/core/utils/locator.dart';
 import 'package:stacked/stacked.dart';
-import 'package:meta/meta.dart';
 
+import '../../../../locator.dart';
 import '../../domain/entities/news_data.dart';
 import '../../domain/usecase/get_news.dart';
 
 class HomeViewModel extends BaseViewModel {
-  final GetNews getNews;
-  HomeViewModel({
-    @required this.getNews,
-  });
+  GetNews _getNews = locator<GetNews>();
 
   News _news;
   News get news => _news;
@@ -22,7 +18,7 @@ class HomeViewModel extends BaseViewModel {
   Future<void> fetchNews() async {
     setBusy(true);
     notifyListeners();
-    final result = await getNews(NoParams());
+    final result = await _getNews(NoParams());
     result.fold((error) {
       _hasError = true;
       print(error.toString());
