@@ -59,8 +59,6 @@ class _HomeViewState extends State<HomeView> {
                                               'https://fcwc-fish.org/wp-content/uploads/2019/07/2000px-Flag_of_Nigeria.svg-1024x512.png',
                                           imageBuilder:
                                               (context, imageProvider) {
-                                            print('checking image');
-                                            print(imageProvider.toString());
                                             return Container(
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
