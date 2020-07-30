@@ -1,3 +1,4 @@
+import 'package:news/features/home/model/articles.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../core/service/api.dart';
@@ -10,5 +11,9 @@ class HomeViewModel extends FutureViewModel<News> {
   Future<News> futureToRun() async {
     News response = await _api.getNews();
     return response;
+  }
+
+  moveToDetails(Articles articles) {
+    print('Details: ${articles.author}');
   }
 }

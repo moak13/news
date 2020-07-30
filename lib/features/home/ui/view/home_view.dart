@@ -35,64 +35,70 @@ class _HomeViewState extends State<HomeView> {
                           padding: const EdgeInsets.all(20),
                           itemCount: model.data.articles.length,
                           itemBuilder: (context, index) {
-                            return Container(
-                              margin: const EdgeInsets.all(5),
-                              height: ScreenUtil(context).setHeight(height: 3),
-                              width: ScreenUtil(context).setWidth(width: 4),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black12,
+                            return InkWell(
+                              onTap: () => model
+                                  .moveToDetails(model.data.articles[index]),
+                              child: Container(
+                                margin: const EdgeInsets.all(5),
+                                height:
+                                    ScreenUtil(context).setHeight(height: 3),
+                                width: ScreenUtil(context).setWidth(width: 4),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.black12,
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Column(
-                                children: <Widget>[
-                                  Expanded(
-                                      flex: 2,
-                                      child: CachedNetworkImage(
-                                        imageUrl: model.data.articles[index]
-                                                .urlToImage ??
-                                            'https://fcwc-fish.org/wp-content/uploads/2019/07/2000px-Flag_of_Nigeria.svg-1024x512.png',
-                                        imageBuilder: (context, imageProvider) {
-                                          print('checking image');
-                                          print(imageProvider.toString());
-                                          return Container(
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: imageProvider,
-                                                    fit: BoxFit.cover)),
-                                          );
-                                        },
-                                        placeholder: (context, url) =>
-                                            Shimmer.fromColors(
-                                          child: Center(
-                                            child: Text('Flutter News'),
+                                child: Column(
+                                  children: <Widget>[
+                                    Expanded(
+                                        flex: 2,
+                                        child: CachedNetworkImage(
+                                          imageUrl: model.data.articles[index]
+                                                  .urlToImage ??
+                                              'https://fcwc-fish.org/wp-content/uploads/2019/07/2000px-Flag_of_Nigeria.svg-1024x512.png',
+                                          imageBuilder:
+                                              (context, imageProvider) {
+                                            print('checking image');
+                                            print(imageProvider.toString());
+                                            return Container(
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: imageProvider,
+                                                      fit: BoxFit.cover)),
+                                            );
+                                          },
+                                          placeholder: (context, url) =>
+                                              Shimmer.fromColors(
+                                            child: Center(
+                                              child: Text('Flutter News'),
+                                            ),
+                                            baseColor: Colors.blue,
+                                            highlightColor: Colors.black,
+                                            direction: ShimmerDirection.ltr,
                                           ),
-                                          baseColor: Colors.blue,
-                                          highlightColor: Colors.black,
-                                          direction: ShimmerDirection.ltr,
-                                        ),
-                                        errorWidget: (context, url, err) =>
-                                            Center(
-                                          child: Text('No Image Found'),
-                                        ),
-                                      )),
-                                  Expanded(
-                                      child: ListTile(
-                                    title: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: Text(
-                                          model.data.articles[index].title ??
-                                              'No Title'),
-                                    ),
-                                    subtitle: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: Text(model.data.articles[index]
-                                              .source.name ??
-                                          'No Source'),
-                                    ),
-                                  ))
-                                ],
+                                          errorWidget: (context, url, err) =>
+                                              Center(
+                                            child: Text('No Image Found'),
+                                          ),
+                                        )),
+                                    Expanded(
+                                        child: ListTile(
+                                      title: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Text(
+                                            model.data.articles[index].title ??
+                                                'No Title'),
+                                      ),
+                                      subtitle: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Text(model.data.articles[index]
+                                                .source.name ??
+                                            'No Source'),
+                                      ),
+                                    ))
+                                  ],
+                                ),
                               ),
                             );
                           }),
