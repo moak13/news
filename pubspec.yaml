@@ -32,6 +32,9 @@ dependencies:
   get_it: ^4.0.4
   # Navigation
   auto_route: ^0.6.6
+  # Image Processing
+  cached_network_image: ^2.2.0+1
+  shimmer: ^1.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
