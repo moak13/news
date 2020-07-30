@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import 'locator.dart';
 import 'core/utils/router.gr.dart';
+import 'locator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
