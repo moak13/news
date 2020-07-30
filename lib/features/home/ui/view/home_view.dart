@@ -100,7 +100,7 @@ class _HomeViewState extends State<HomeView> {
                   : _key.currentState.showSnackBar(
                       SnackBar(
                         backgroundColor: Colors.red[200],
-                        content: Text('error'),
+                        content: Text(model.modelError),
                       ),
                     ),
         );
