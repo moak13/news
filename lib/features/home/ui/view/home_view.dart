@@ -79,12 +79,18 @@ class _HomeViewState extends State<HomeView> {
                                       )),
                                   Expanded(
                                       child: ListTile(
-                                    title: Text(
-                                        model.data.articles[index].author ??
-                                            'No Author'),
-                                    subtitle: Text(model
-                                            .data.articles[index].source.name ??
-                                        'No Source'),
+                                    title: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                          model.data.articles[index].title ??
+                                              'No Title'),
+                                    ),
+                                    subtitle: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(model.data.articles[index]
+                                              .source.name ??
+                                          'No Source'),
+                                    ),
                                   ))
                                 ],
                               ),
